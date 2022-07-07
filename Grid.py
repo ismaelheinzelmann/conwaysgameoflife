@@ -1,5 +1,4 @@
 class Grid:
-
     # If a cell is ON and has fewer than two neighbors that are ON, it turns OFF
     # If a cell is ON and has either two or three neighbors that are ON, it remains ON.
     # If a cell is ON and has more than three neighbors that are ON, it turns OFF.
@@ -13,9 +12,25 @@ class Grid:
 
         self.grid = grid
         self.grid_n = n
-    
+
+    def reset_grid(self, n):
+        grid = []
+        for i in range(n):
+            grid.append([])
+            for _ in range(n):
+                grid[i].append(0)
+
+        self.grid = grid
+        self.grid_n = n    
+
     def set_grid(self, ls):
         self.grid = ls
+
+    def switch_cell(self, i, j):
+        moment = self.grid[i][j]
+        if moment == 1:
+            self.grid[i][j] = 0
+        else: self.grid[i][j] = 1
 
     def _count_neighbors(self, i, j):
         count = 0
