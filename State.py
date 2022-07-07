@@ -2,14 +2,18 @@ class State:
 
     def __init__(self, state):
         self.state = state
+        self.help = False
 
-    def _set_state(self, state):
+    def set_state(self, state):
         self.state = state
     
-    def set_menu(self):
-        self.state = "menu"
+    def set_creating(self):
+        self.state = "creating"
 
-    def set_game(self):
-        if self.state == "menu":
+    def set_evolving(self):
+        if self.state == "creating":
             self.state = "game"
+
+    def switch_help(self):
+        self.help = not self.help
             
