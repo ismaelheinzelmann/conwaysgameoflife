@@ -43,7 +43,9 @@ class Grid:
                   (1, 0),
                   (1, 1)]
         for e in matrix:
-            try: count += self.grid[i + e[0]][j + e[1]]
+            try:
+                if i == 0 or j == 0 and (e[0] == -1 or e[1] == -1): pass
+                else: count += self.grid[i + e[0]][j + e[1]]
             except: pass
         return count
 
@@ -64,27 +66,3 @@ class Grid:
                 new_grid[i].append(self._tick_live(i, j))
         
         self.grid = new_grid
-
-if __name__ == "__main__":
-    grid = Grid(10)
-
-    grid.set_grid([[0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,1,1,1,0,0,0,0],
-                [0,0,0,1,1,1,0,0,0,0],
-                [0,0,0,1,1,1,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0],
-                [0,0,0,0,0,0,0,0,0,0]])
-
-    for i in range(20):
-        print("----GERAÇÃO %d-----"%(i+1))
-        for line in grid.grid:
-            compline = [str(x) for x in line]
-            str_line = " ".join(compline)
-            str_line.replace("1", "*")
-            str_line.replace("0", " ")
-            print(str_line)
-        grid.update_grid()

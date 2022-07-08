@@ -5,7 +5,14 @@ import sys
 from Grid import Grid
 from colors import blue, red, orange, yellow, cream, black
 from State import State
+
 #https://pygame.readthedocs.io/en/latest/4_text/text.html
+#TODO Implementar editar com o padrão inicial ao run
+#TODO Implementar escritas à direita
+#TODO Implementar interface com status
+#TODO Implementar DEMOS
+#TODO Implementar Explicação
+
 class ConwaysGame():
 
     def __init__(self):
