@@ -12,6 +12,8 @@ class Grid:
 
         self.grid = grid
         self.grid_n = n
+        self.start_grid = grid
+
 
     def reset_grid(self, n):
         grid = []
@@ -21,6 +23,7 @@ class Grid:
                 grid[i].append(0)
 
         self.grid = grid
+        self.start_grid = grid
         self.grid_n = n    
 
     def set_grid(self, ls):

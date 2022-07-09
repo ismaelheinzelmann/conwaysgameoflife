@@ -16,7 +16,4 @@ class State:
     def set_evolving(self):
         if self.state == "creating":
             self.state = "game"
-
-    def switch_help(self):
-        self.help = not self.help
             
